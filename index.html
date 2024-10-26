@@ -1,32 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Mi primera pagina web</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                background-color: hsl(240, 22%, 11%);
-                color: crimson;
-                font-family: 'Times New Roman', Times, serif;
+<head>
+    <title>Mi primera pagina web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function calcular() {
+            // Obtener los valores de los campos de texto
+            let objo = parseFloat(document.getElementById('objo').value) || 0;
+            let rmana = parseFloat(document.getElementById('rmana').value) || 0;
+            let critico = parseFloat(document.getElementById('critico').value) || 0;
+            let da = parseFloat(document.getElementById('da').value) || 0;
+            let er = parseFloat(document.getElementById('er').value) || 0;
+            let ats = parseFloat(document.getElementById('ats').value) || 0;
+            let ap = parseFloat(document.getElementById('ap').value) || 0;
+            let hp = parseFloat(document.getElementById('hp').value) || 0;
+            let rv = parseFloat(document.getElementById('rv').value) || 0;
+            let m = parseFloat(document.getElementById('m').value) || 0;
+            let ms = parseFloat(document.getElementById('ms').value) || 0;
+            let arm = parseFloat(document.getElementById('arm').value) || 0;
+            let rm = parseFloat(document.getElementById('rm').value) || 0;
+            let lt = parseFloat(document.getElementById('lt').value) || 0;
+            let lm = parseFloat(document.getElementById('lm').value) || 0;
+            let parm = parseFloat(document.getElementById('parm').value) || 0;
+            let pm = parseFloat(document.getElementById('pm').value) || 0;
+            let vmp = parseFloat(document.getElementById('vmp').value) || 0;
+            let ls = parseFloat(document.getElementById('ls').value) || 0;
+            let pve = parseFloat(document.getElementById('pve').value) || 0;
+            let dip = parseFloat(document.getElementById('dip').value) || 0;
+
+            // Cálculos
+            let objHC = rmana * 4 + critico * 40 + da * 35 + er * 50 + ats * 25 + ap * 20 + hp * 2.67 + rv * 3 + m * 1 + ms * 12 + arm * 20 + rm * 20 + lt * 30 + lm * 37.33 + parm * 41.67 + pm * 46.15 + vmp * 53.33 + ls * 53.57 + pve * 50 + dip * 21.67;
+            let porcentajeOBJ = (objHC / objo) * 100;   
+                        
+            // Mostrar el resultado en la página
+            document.getElementById("resultado").innerText = "Porcentaje de eficiencia: " + porcentajeOBJ.toFixed(2) + "%";
+            return false;
+        }
+        function cambiarImagen1() {
+            var img = document.getElementById('imagen1');
+            var hola = document.getElementById('hola1');
+            
+            // Cambia la imagen y muestra el texto "HOLA" solo si es la imagen cambiada
+            if (img.src.endsWith('twtarea.jpg')) {
+                img.src = 'twl9tarea.jpeg';
+                hola.style.visibility = 'visible'; // Muestra el "HOLA"
+            } else {
+                img.src = 'twtarea.jpg';
+                hola.style.visibility = 'hidden'; // Oculta el "HOLA"
             }
-            .link {
-                color: crimson;
-                font-family: 'Times New Roman', Times, serif;
+        }
+
+        function cambiarImagen2() {
+            var img = document.getElementById('imagen2');
+            var hola = document.getElementById('hola2');
+            
+            // Cambia la imagen y muestra el texto "HOLA" solo si es la imagen cambiada
+            if (img.src.endsWith('VoidoraPortraitLvl20SunGod.webp')) {
+                img.src = 'VoidoraPortraitLvl20SunGodVengful.webp';
+                hola.style.visibility = 'visible'; // Muestra el "HOLA"
+            } else {
+                img.src = 'VoidoraPortraitLvl20SunGod.webp';
+                hola.style.visibility = 'hidden'; // Oculta el "HOLA"
             }
-        </style>
-    </head>
-    <body>
-        <h1>Fermín Nieto</h1>
-        <h2>Mi primera página web</h2>
-        <p>Juego principalmente al lol y a BTD6, mis campeones favoritos en el lol son Warwik y Twitch. Mis héroes favoritos de BTD6 son Adora y Ezili.</p>
-        <br>
-        <img src="/Primera-Pagina-web/twtarea.jpg" width="300px" height="300">
-        <img src="/Primera-Pagina-web/wwtundra.jpg" width="300px" height="300">
-        <img src="/Primera-Pagina-web/VoidoraPortraitLvl20.webp" width="300px" height="300">
-        <img src="/Primera-Pagina-web/ProfileAvatar46.webp" width="300px" height="300">
-        <img src="https://media.tenor.com/imJhZ4_SqHwAAAAC/gragas-graga.gif" width="300px" height="300">
-        <a class="link" href="https://www.youtube.com/watch?v=iB6UsNexlSA&list=PLy6N_9yB8QwyTXIXDXlf4AJln9giAc3Bz" target="_blank">Musica que escucho cuando juego</a>
-    </body>
+        }
+    </script>
+</head>
+<body style="background-color: hsl(240,22%,11%); color:crimson; font-family: 'Times New Roman', Times, serif">
+    <h1>Fermín Nieto</h1>
+    <h2>Mi primera página web</h2>
+    <p>Juego principalmente al lol y a BTD6, mis campeones favoritos en el lol son Warwick y Twitch. Mis héroes favoritos de BTD6 son Adora y Ezili, at alias.</p>
+    
+    <!-- Contenedor principal que alinea horizontalmente las imágenes, sus botones y los textos -->
+    <div class="container">
+        <!-- Contenedor para la primera imagen y su "HOLA" -->
+        <div class="image-container">
+            <div class="overlay-hola" id="hola1">😮 ¡L9 Twitch OMG! 😮</div>
+            <img src="c:\Users\nieto\OneDrive\Documentos\Primero practicas html\Practica_1\twtarea.jpg" width="300px" height="300" id="imagen1">
+        </div>
+        <div class="button-image-container">
+            <p class="overlay-text">¿Boton 🤨? ↓</p>
+            <button type="button" class="button" onclick="cambiarImagen1()">
+                <img src="c:\Users\nieto\OneDrive\Documentos\Primero practicas html\Practica_1\wwtundra.jpg" width="300px" height="300">
+            </button>
+        </div>
+        
+        <!-- Contenedor para la segunda imagen y su "HOLA" -->
+        <div class="image-container">
+            <div class="overlay-hola" id="hola2">😮 ¡¡OMG!! ¡Adora Sacerdotisa del Dios del Sol vengativo!  😮</div>
+            <img src="c:\Users\nieto\OneDrive\Documentos\Primero practicas html\Practica_1\VoidoraPortraitLvl20SunGod.webp" width="300px" height="300" id="imagen2">
+        </div>
+        <div class="button-image-container">
+            <p class="overlay-text">¿Boton 🤨? ↓</p>
+            <button type="button" class="button" onclick="cambiarImagen2()">
+                <img src="c:\Users\nieto\OneDrive\Documentos\Primero practicas html\Practica_1\ProfileAvatar46.webp" width="300px" height="300">
+            </button>
+        </div>
+    </div>
+
+    <br>
+    <img src="https://media1.tenor.com/m/imJhZ4_SqHwAAAAC/gragas-graga.gif" width="300px" height="300">
+    <a class="link" href="https://www.youtube.com/watch?v=iB6UsNexlSA&list=PLy6N_9yB8QwyTXIXDXlf4AJln9giAc3Bz" target="_blank">Música que escucho cuando juego</a>
+    <br>
+    <h3>Calculadora de costo eficiencia, objetos League of Legends:</h3>
+    <h4>100% significa que el ítem no es ni costo eficiente ni costo ineficiente, menos significa que es costo ineficiente, mas que es costo eficiente</h4>
+    <form class="form-container" onsubmit="return calcular()">
+        <label for="rmana">Coste total del objeto:</label>
+        <input type="text" id="objo" name="objo">
+
+        <label for="rmana">Regeneración de mana:</label>
+        <input type="text" id="rmana" name="rmana">
+        
+        <label for="critico">Probabilidad de critico:</label>
+        <input type="text" id="critico" name="critico">
+        
+        <label for="da">Daño de ataque:</label>
+        <input type="text" id="da" name="da">
+        
+        <label for="er">Reducción de enfriamientos:</label>
+        <input type="text" id="er" name="er">
+        
+        <label for="ats">Velocidad de ataque:</label>
+        <input type="text" id="ats" name="ats">
+        
+        <label for="ap">Daño mágico:</label>
+        <input type="text" id="ap" name="ap">
+        
+        <label for="hp">Vida:</label>
+        <input type="text" id="hp" name="hp">
+        
+        <label for="rv">Regeneración de vida:</label>
+        <input type="text" id="rv" name="rv">
+        
+        <label for="m">Mana:</label>
+        <input type="text" id="m" name="m">
+        
+        <label for="ms">Velocidad de movimiento:</label>
+        <input type="text" id="ms" name="ms">
+        
+        <label for="arm">Armadura:</label>
+        <input type="text" id="arm" name="arm">
+        
+        <label for="rm">Resistencia mágica:</label>
+        <input type="text" id="rm" name="rm">
+        
+        <label for="lt">Letalidad:</label>
+        <input type="text" id="lt" name="lt">
+        
+        <label for="lm">Letalidad mágica:</label>
+        <input type="text" id="lm" name="lm">
+        
+        <label for="parm">Penetración de armadura:</label>
+        <input type="text" id="parm" name="parm">
+        
+        <label for="pm">Penetración mágica:</label>
+        <input type="text" id="pm" name="pm">
+        
+        <label for="vmp">Velocidad de movimiento porcentual:</label>
+        <input type="text" id="vmp" name="vmp">
+        
+        <label for="ls">Robo de vida:</label>
+        <input type="text" id="ls" name="ls">
+        
+        <label for="pve">Poder de vida y escudos:</label>
+        <input type="text" id="pve" name="pve">
+        
+        <label for="dip">Daño de impacto:</label>
+        <input type="text" id="dip" name="dip">
+        
+        <input type="submit" value="Calcualr">
+    </form>
+    <p id="resultado"></p>
+</body>
 </html>
 
