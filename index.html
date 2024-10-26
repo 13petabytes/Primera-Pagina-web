@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script>
         function calcular() {
-            // Obtener los valores de los campos de texto
+
             let objo = parseFloat(document.getElementById('objo').value) || 0;
             let rmana = parseFloat(document.getElementById('rmana').value) || 0;
             let critico = parseFloat(document.getElementById('critico').value) || 0;
@@ -30,11 +30,11 @@
             let pve = parseFloat(document.getElementById('pve').value) || 0;
             let dip = parseFloat(document.getElementById('dip').value) || 0;
 
-            // Cálculos
+
             let objHC = rmana * 4 + critico * 40 + da * 35 + er * 50 + ats * 25 + ap * 20 + hp * 2.67 + rv * 3 + m * 1 + ms * 12 + arm * 20 + rm * 20 + lt * 30 + lm * 37.33 + parm * 41.67 + pm * 46.15 + vmp * 53.33 + ls * 53.57 + pve * 50 + dip * 21.67;
             let porcentajeOBJ = (objHC / objo) * 100;   
                         
-            // Mostrar el resultado en la página
+
             document.getElementById("resultado").innerText = "Porcentaje de eficiencia: " + porcentajeOBJ.toFixed(2) + "%";
             return false;
         }
@@ -42,13 +42,12 @@
             var img = document.getElementById('imagen1');
             var hola = document.getElementById('hola1');
             
-            // Cambia la imagen y muestra el texto "HOLA" solo si es la imagen cambiada
             if (img.src.endsWith('twtarea.jpg')) {
                 img.src = 'twl9tarea.jpeg';
-                hola.style.visibility = 'visible'; // Muestra el "HOLA"
+                hola.style.visibility = 'visible'; 
             } else {
                 img.src = 'twtarea.jpg';
-                hola.style.visibility = 'hidden'; // Oculta el "HOLA"
+                hola.style.visibility = 'hidden'; 
             }
         }
 
@@ -56,13 +55,13 @@
             var img = document.getElementById('imagen2');
             var hola = document.getElementById('hola2');
             
-            // Cambia la imagen y muestra el texto "HOLA" solo si es la imagen cambiada
+
             if (img.src.endsWith('VoidoraPortraitLvl20SunGod.webp')) {
                 img.src = 'VoidoraPortraitLvl20SunGodVengful.webp';
-                hola.style.visibility = 'visible'; // Muestra el "HOLA"
+                hola.style.visibility = 'visible';
             } else {
                 img.src = 'VoidoraPortraitLvl20SunGod.webp';
-                hola.style.visibility = 'hidden'; // Oculta el "HOLA"
+                hola.style.visibility = 'hidden';
             }
         }
     </script>
@@ -72,9 +71,7 @@
     <h2>Mi primera página web</h2>
     <p>Juego principalmente al lol y a BTD6, mis campeones favoritos en el lol son Warwick y Twitch. Mis héroes favoritos de BTD6 son Adora y Ezili, at alias.</p>
     
-    <!-- Contenedor principal que alinea horizontalmente las imágenes, sus botones y los textos -->
     <div class="container">
-        <!-- Contenedor para la primera imagen y su "HOLA" -->
         <div class="image-container">
             <div class="overlay-hola" id="hola1">😮 ¡L9 Twitch OMG! 😮</div>
             <img src="twtarea.jpg" width="300px" height="300" id="imagen1">
@@ -86,7 +83,6 @@
             </button>
         </div>
         
-        <!-- Contenedor para la segunda imagen y su "HOLA" -->
         <div class="image-container">
             <div class="overlay-hola" id="hola2">😮 ¡¡OMG!! ¡Adora Sacerdotisa del Dios del Sol vengativo!  😮</div>
             <img src="VoidoraPortraitLvl20SunGod.webp" width="300px" height="300" id="imagen2">
